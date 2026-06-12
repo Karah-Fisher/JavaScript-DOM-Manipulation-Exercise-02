@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Profile Card</title>
+</head>
+<body>
+    <!-- Setting up the profile card structure -->
+     <div id="profileCard">
+        <img id="profileImage" src="https://via.placeholder.com/150" alt="Profile Image">
+        <h2 id="profileName">John Doe</h2>
+        <p id="profileRole">Software Developer</p>
+        <p id="profileBio">A passionate developer with a love for coding and technology.</p>
+        <button id="updateNameBtn">Update Name</button>
+        <button id="updateRoleBtn">Update Role</button>
+        <button id="toggleStatusBtn">Toggle Active Status</button>
+        <button id="updateImageBtn">Change Image</button>
+     </div>
+     <script src="script.js"></script>
+     
+</body>
+</html>
+
+<style>
+    /* Basic styling for the profile card */
+    #profileCard {
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+    }
+
+    #profileImage {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+    }
+
+    #profileName {
+        margin: 10px 0;
+        font-size: 24px;
+    }
+
+    #profileRole {
+        margin: 5px 0;
+        color: #777;
+    }
+
+    #profileBio {
+        margin: 15px 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+    button {
+        margin: 5px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007BFF;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
