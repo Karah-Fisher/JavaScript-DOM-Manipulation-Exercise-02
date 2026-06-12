@@ -30,7 +30,9 @@ toggleStatusButton.addEventListener('click', function() {
     const currentStatus = profileCard.getAttribute('data-status');
     const newStatus = currentStatus === 'active' ? 'inactive' : 'active';
     profileCard.setAttribute('data-status', newStatus);
-    toggleStatusButton.textContent = newStatus === 'active' ? 'Deactivate' : 'Activate';
+    toggleStatusButton.textContent = newStatus === 'active' ? 'Deactivate Profile' : 'Activate Profile';
+    toggleStatusButton.classList.toggle('active-status', newStatus === 'active');
+    toggleStatusButton.classList.toggle('inactive-status', newStatus === 'inactive');
 });
 
 // --- Task 3: Update Profile Image --- //
@@ -40,3 +42,15 @@ updateImageButton.addEventListener('click', function() {
         profileImage.src = newImageUrl;
     }
 });
+
+// Initialize toggle button label to reflect current status
+(function initStatusButton() {
+    if (!profileCard) return;
+    const currentStatus = profileCard.getAttribute('data-status') || 'active';
+    profileCard.setAttribute('data-status', currentStatus);
+    if (toggleStatusButton) {
+        toggleStatusButton.textContent = currentStatus === 'active' ? 'Deactivate Profile' : 'Activate Profile';
+        toggleStatusButton.classList.toggle('active-status', currentStatus === 'active');
+        toggleStatusButton.classList.toggle('inactive-status', currentStatus === 'inactive');
+    }
+})();
